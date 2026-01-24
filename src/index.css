@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+  
+  .border-glow {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  }
+  
+  .bg-glow {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+  }
+
+  .glass {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-strong {
+    background: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-light {
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Удаление белого фона у изображений */
+  .logo-no-bg {
+    mix-blend-mode: multiply;
+    filter: brightness(0) invert(1);
+  }
+  
+  /* Альтернативный вариант - делает белый фон прозрачным */
+  .logo-transparent {
+    mix-blend-mode: screen;
+  }
+
+  .text-ante-gradient {
+    color: #FFD700;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4));
+  }
+
+  @keyframes letterGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 10px rgba(255, 215, 0, 0.25));
+    }
+    50% {
+      filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 15px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 22px rgba(255, 215, 0, 0.2));
+    }
+  }
+
+  @keyframes letterVibrate {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-1px, 1px);
+    }
+    50% {
+      transform: translate(1px, -1px);
+    }
+    75% {
+      transform: translate(-1px, -1px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-letters {
+    display: inline-block;
+  }
+
+  .animate-letters span {
+    display: inline-block;
+    animation: letterGlow 3s ease-in-out infinite;
+    color: #FFD700;
+  }
+
+  .animate-letters span:nth-child(1) { animation-delay: 0s; }
+  .animate-letters span:nth-child(2) { animation-delay: 0.1s; }
+  .animate-letters span:nth-child(3) { animation-delay: 0.2s; }
+  .animate-letters span:nth-child(4) { animation-delay: 0.3s; }
+  .animate-letters span:nth-child(5) { animation-delay: 0.4s; }
+  .animate-letters span:nth-child(6) { animation-delay: 0.5s; }
+  .animate-letters span:nth-child(7) { animation-delay: 0.6s; }
+  .animate-letters span:nth-child(8) { animation-delay: 0.7s; }
+  .animate-letters span:nth-child(9) { animation-delay: 0.8s; }
+
+  .text-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(212, 175, 55, 1) 0%,
+      rgba(255, 215, 0, 1) 50%,
+      rgba(212, 175, 55, 1) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+}
+
