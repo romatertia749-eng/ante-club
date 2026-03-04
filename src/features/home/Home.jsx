@@ -25,9 +25,9 @@ const Home = () => {
       <RulesCallout />
       <TournamentsPreview />
       <AboutSection />
+      <FairPlaySection />
       <GallerySection />
       <NewsSection />
-      <FairPlaySection />
     </>
   )
 }

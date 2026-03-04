@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom'
 import Button from '../../components/Button/Button'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
 
+const rulesCalloutContent = {
+  headingPrefix: 'Прочитайте правила',
+  headingClubName: 'Ante Club',
+  description:
+    'Клуб работает в формате спортивного покера: только живые турниры, без кеш-игр и онлайн-гемблинга. Мы обеспечиваем честную игру, прозрачные правила и справедливые условия для всех участников.',
+  buttonText: 'Посмотреть правила клуба',
+}
+
 const RulesCallout = () => {
   return (
     <AnimatedSection className="py-8 md:py-12 lg:py-16" delay={100}>
@@ -20,20 +28,22 @@ const RulesCallout = () => {
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 md:mb-6">
-              <span className="text-gold text-glow">Прочитайте правила</span>
+              <span className="text-gold text-glow">
+                {rulesCalloutContent.headingPrefix}
+              </span>
               <br />
-              <span className="text-ante-gradient">Ante Club</span>
+              <span className="text-ante-gradient">
+                {rulesCalloutContent.headingClubName}
+              </span>
             </h2>
             
             <p className="text-lg md:text-xl text-textSecondary max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed">
-              Клуб работает в формате спортивного покера: <strong className="text-gold">только живые турниры</strong>, 
-              без кеш-игр и онлайн-гемблинга. Мы обеспечиваем честную игру, прозрачные правила и 
-              справедливые условия для всех участников.
+              {rulesCalloutContent.description}
             </p>
             
             <Link to="/rules">
               <Button size="lg" variant="primary" className="shadow-lg shadow-gold/30 hover:shadow-gold/50">
-                Посмотреть правила клуба
+                {rulesCalloutContent.buttonText}
               </Button>
             </Link>
           </div>

@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button/Button'
 
+const heroContent = {
+  welcomeLine: 'Добро пожаловать в',
+  clubName: 'Ante Club',
+  tagline: 'Первое место в Южной столице для игры в спортивный покер',
+  description:
+    'Вы платите не за фишки, а за хорошее времяпрепровождение и профессиональную атмосферу классического техасского холдема.',
+  primaryCta: 'Предстоящие турниры',
+  secondaryCta: 'Присоединиться к клубу',
+}
+
 /**
  * Главный баннер (Hero секция) на главной странице
  * Содержит приветствие, название клуба и призыв к действию
@@ -16,7 +26,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-8 md:pt-12">
       {/* Фоновый градиент с паттерном карт */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black/90 z-0">
         <div className="absolute inset-0 opacity-20">
@@ -39,12 +49,12 @@ const Hero = () => {
           {/* Заголовки */}
           <div className="space-y-4 md:space-y-5">
             <p className="text-2xl md:text-3xl lg:text-4xl text-textSecondary font-normal">
-              Добро пожаловать в
+              {heroContent.welcomeLine}
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold">
               {/* Название клуба с градиентным цветом и эффектом свечения */}
               <span className="text-ante-gradient py-2 md:py-3 inline-block animate-letters">
-                {'Ante Club'.split('').map((char, index) => (
+                {heroContent.clubName.split('').map((char, index) => (
                   <span key={index} style={{ animationDelay: `${index * 0.1}s` }}>
                     {char === ' ' ? '\u00A0' : char}
                   </span>
@@ -52,20 +62,20 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-white font-normal max-w-3xl mx-auto leading-relaxed">
-              Первое место в Южной столице для игры в спортивный покер
+              {heroContent.tagline}
             </p>
           </div>
           {/* Описание */}
           <p className="text-base md:text-lg lg:text-xl text-textSecondary max-w-3xl mx-auto mt-8 md:mt-10 mb-8 md:mb-12 leading-relaxed">
-            Вы платите не за фишки, а за хорошее времяпрепровождение и профессиональную атмосферу классического техасского холдема.
+            {heroContent.description}
           </p>
           {/* Кнопки призыва к действию */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" variant="primary">
-              Предстоящие турниры
+              {heroContent.primaryCta}
             </Button>
             <Button size="lg" variant="secondary">
-              Присоединиться к клубу
+              {heroContent.secondaryCta}
             </Button>
           </div>
         </div>

@@ -21,25 +21,35 @@ const Section = ({
   id 
 }) => {
   return (
-    <section id={id} className={`py-12 md:py-16 lg:py-20 ${className}`}>
+  <section id={id} className={`py-10 md:py-14 lg:py-18 ${className}`}>
       <div className={`container mx-auto px-4 md:px-6 lg:px-8 ${containerClassName}`}>
         {/* Заголовок и подзаголовок секции (если указаны) */}
         {(title || subtitle) && (
           <div className="mb-8 md:mb-12 text-center">
-            {title && (
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-4">
-                {title}
-              </h2>
-            )}
-            {subtitle && (
-              <p className="text-textSecondary text-base md:text-lg max-w-2xl mx-auto">
-                {subtitle}
-              </p>
-            )}
+            <div className="inline-block max-w-3xl mx-auto glass-light rounded-2xl px-4 py-6 md:px-6 md:py-8">
+              {title && (
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-4">
+                  {title}
+                </h2>
+              )}
+              {subtitle && (
+                <p className="text-textSecondary text-base md:text-lg max-w-2xl mx-auto">
+                  {subtitle}
+                </p>
+              )}
+            </div>
           </div>
         )}
         {/* Содержимое секции */}
-        {children}
+        <div className="relative glass-light rounded-3xl px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10 overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 opacity-60">
+            <div className="absolute -top-32 -right-32 w-64 h-64 bg-gold/5 blur-3xl" />
+            <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gold/5 blur-3xl" />
+          </div>
+          <div className="relative z-10">
+            {children}
+          </div>
+        </div>
       </div>
     </section>
   )
