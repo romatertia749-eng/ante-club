@@ -48,6 +48,7 @@ const AnimatedSection = ({
       ref={ref}
       className={className}
       style={{
+        willChange: 'opacity, transform',
         opacity: isVisible ? 1 : 0, // Плавное изменение прозрачности
         transform: getTransform(), // Плавное смещение и масштабирование
         transition: `opacity 0.6s ease-out ${delay}ms, transform 0.6s ease-out ${delay}ms`,

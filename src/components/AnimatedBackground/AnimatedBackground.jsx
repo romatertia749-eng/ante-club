@@ -12,6 +12,8 @@ const AnimatedBackground = () => {
         muted
         loop
         playsInline
+        preload="metadata"
+        style={{ willChange: 'transform', transform: 'translateZ(0)' }}
       />
       <div className="absolute inset-0 bg-black/60" />
     </div>

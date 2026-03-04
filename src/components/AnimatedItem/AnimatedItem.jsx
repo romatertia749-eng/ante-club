@@ -26,6 +26,7 @@ const AnimatedItem = ({
       ref={ref}
       className={className}
       style={{
+        willChange: 'opacity, transform',
         opacity: isVisible ? 1 : 0, // Плавное появление
         // Смещение снизу вверх с небольшим масштабированием
         transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
