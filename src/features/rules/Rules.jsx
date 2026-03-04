@@ -5,7 +5,8 @@ import Card from '../../components/Card/Card'
 const Rules = () => {
   // Прокручиваем страницу наверх при загрузке компонента
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+    window.scrollTo({ top: 0, behavior: isMobile ? 'auto' : 'smooth' })
   }, [])
 
   return (
