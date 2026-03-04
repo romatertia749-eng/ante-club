@@ -28,9 +28,7 @@ const Section = ({
           <div className="mb-8 md:mb-12 text-center">
             {title && (
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-4">
-                {/* Первое слово заголовка выделяется золотым цветом */}
-                <span className="text-gold">{title.split(' ')[0]}</span>{' '}
-                {title.split(' ').slice(1).join(' ')}
+                {title}
               </h2>
             )}
             {subtitle && (
