@@ -3,11 +3,9 @@ import React from 'react'
 /**
  * Компонент-обёртка для секций страницы
  * Обеспечивает единообразное оформление заголовков и отступов
- * Автоматически выделяет первое слово заголовка золотым цветом
- * 
+ *
  * @param {ReactNode} children - Содержимое секции
- * @param {string} title - Заголовок секции (первое слово будет золотым)
- * @param {string} subtitle - Подзаголовок секции
+ * @param {string} title - Заголовок секции
  * @param {string} className - Дополнительные CSS классы для секции
  * @param {string} containerClassName - Дополнительные CSS классы для контейнера
  * @param {string} id - ID секции для якорных ссылок
@@ -15,28 +13,19 @@ import React from 'react'
 const Section = ({ 
   children, 
   title, 
-  subtitle, 
   className = '', 
   containerClassName = '',
   id 
 }) => {
   return (
-  <section id={id} className={`py-10 md:py-14 lg:py-18 ${className}`}>
+    <section id={id} className={`py-10 md:py-14 lg:py-18 ${className}`}>
       <div className={`container mx-auto px-4 md:px-6 lg:px-8 ${containerClassName}`}>
-        {/* Заголовок и подзаголовок секции (если указаны) */}
-        {(title || subtitle) && (
+        {title && (
           <div className="mb-8 md:mb-12 text-center">
             <div className="inline-block max-w-3xl mx-auto glass-light rounded-2xl px-4 py-6 md:px-6 md:py-8">
-              {title && (
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-4">
-                  {title}
-                </h2>
-              )}
-              {subtitle && (
-                <p className="text-textSecondary text-base md:text-lg max-w-2xl mx-auto">
-                  {subtitle}
-                </p>
-              )}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-4">
+                {title}
+              </h2>
             </div>
           </div>
         )}

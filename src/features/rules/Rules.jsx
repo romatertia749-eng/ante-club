@@ -12,7 +12,6 @@ const Rules = () => {
     <div className="min-h-screen bg-black">
       <Section 
         title="Правила клуба"
-        subtitle="Регламент и формат работы Ante Club"
         className="pt-8"
       >
         <div className="max-w-4xl mx-auto space-y-8">

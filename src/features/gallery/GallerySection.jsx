@@ -37,7 +37,6 @@ const GallerySection = () => {
   return (
     <Section 
       title={gallerySectionContent.title}
-      subtitle={gallerySectionContent.subtitle}
       className="bg-transparent"
     >
       <div className="relative glass rounded-2xl p-4 md:p-6">
