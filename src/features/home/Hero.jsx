@@ -28,8 +28,8 @@ const Hero = () => {
   return (
     <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-8 md:pt-12">
       {/* Фоновый градиент с паттерном карт */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black/90 z-0">
-        <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/30 z-0">
+        <div className="absolute inset-0 opacity-10">
           {/* SVG паттерн карт в качестве фонового декора */}
           <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iY2FyZHMiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cGF0aCBkPSJNMTAgMTBoODB2ODBIMTB6IiBmaWxsPSJub25lIiBzdHJva2U9IiNkNGFmMzciIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJ1cmwoI2NhcmRzKSIvPjwvc3ZnPg==')]"></div>
         </div>
@@ -45,7 +45,7 @@ const Hero = () => {
         }}
       >
         {/* Карточка с эффектом стекла (glassmorphism) */}
-        <div className="glass rounded-2xl p-8 md:p-12 lg:p-16 max-w-4xl mx-auto">
+        <div className="glass-light rounded-2xl p-8 md:p-12 lg:p-16 max-w-4xl mx-auto">
           {/* Заголовки */}
           <div className="space-y-4 md:space-y-5">
             <p className="text-2xl md:text-3xl lg:text-4xl text-textSecondary font-normal">
