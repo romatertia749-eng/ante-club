@@ -1,6 +1,6 @@
 
 import React from 'react'
-import backgroundVideo from '../../assets/images/backgrounds/video_preview_h264 (online-video-cutter.com).mp4'
+import backgroundVideo from '../../assets/images/backgrounds/istockphoto-472986427-640_adpp_is (online-video-cutter.com).mp4'
 
 const AnimatedBackground = () => {
   return (
