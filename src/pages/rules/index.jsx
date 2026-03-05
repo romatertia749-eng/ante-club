@@ -5,3 +5,4 @@ const RulesPage = () => <Rules />
 export default RulesPage
 
 
+
